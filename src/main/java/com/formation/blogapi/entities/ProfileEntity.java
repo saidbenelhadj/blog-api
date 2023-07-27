@@ -24,7 +24,4 @@ public class ProfileEntity {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String Bio;
 
-    @OneToOne
-    private ProfileEntity profile;
-   
 }

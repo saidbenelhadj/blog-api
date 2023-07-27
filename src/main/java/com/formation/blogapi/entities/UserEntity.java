@@ -1,10 +1,13 @@
 package com.formation.blogapi.entities;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
@@ -36,5 +39,8 @@ public class UserEntity {
 
     @OneToOne
     private ProfileEntity profile;
+
+    @OneToMany(mappedBy = "user")
+    private Collection<PostEntity> posts;
     
 }

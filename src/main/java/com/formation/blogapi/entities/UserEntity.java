@@ -42,5 +42,8 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user")
     private Collection<PostEntity> posts;
+
+    @OneToMany(mappedBy = "user")
+    private Collection<CommentEntity> comments;
     
 }

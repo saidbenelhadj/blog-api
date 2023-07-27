@@ -15,7 +15,7 @@ public class UserController {
     @GetMapping("")
     public Collection<UserEntity> findAll() {
         return List.of(
-                new UserEntity(1, "user1", "password1", "password1", "said@gmail.com", null,null)
+                new UserEntity(1, "user1", "password1", "password1", "said@gmail.com", null,null,null)
         );
     }
 }

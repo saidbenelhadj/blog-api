@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -45,5 +48,10 @@ public class PostEntity {
     private Collection<CommentEntity> comments;
 
     @ManyToMany
+    @JoinTable(
+        name = "post_tag",
+        joinColumns = @JoinColumn(name = "post_id"),
+        inverseJoinColumns =  @JoinColumn(name = "tag_id")
+    )
     private Collection<TagEntity> tags;
 }
